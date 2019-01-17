@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import RxCocoa
 import RxSwift
+import RxMKMapView
 
 class MapViewController: UIViewController {
     
@@ -27,8 +28,23 @@ class MapViewController: UIViewController {
         let berlin = CLLocationCoordinate2D(latitude: BerlinCoordinate.latitude, longitude: BerlinCoordinate.longitude)
 
         mapView?.setCenter(berlin, animated:false)
+        mapView?.setRegion(MKCoordinateRegion(center: berlin, latitudinalMeters: 2000, longitudinalMeters: 2000), animated:true)
+        
+        // setup map view with Rx extension
+        
+        mapView?.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        mapView?.rx
+            .regionDidChangeAnimated
+            .subscribe(onNext: { _ in
+                print("Map region changed")
+            })
+            .disposed(by: disposeBag)
     }
+}
+
+extension MapViewController: MKMapViewDelegate {
     
-
-
 }
