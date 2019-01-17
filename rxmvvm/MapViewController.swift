@@ -62,7 +62,8 @@ class MapViewController: UIViewController {
             .region
             .map { region -> Restaurant.Coordinate in
                 return Restaurant.Coordinate(lat: region.center.latitude, lon: region.center.longitude)
-            }.asObservable()
+            }
+            .asObservable()
             .bind(to:viewModel.currentLocation)
             .disposed(by: disposeBag)
         
