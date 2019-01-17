@@ -11,9 +11,9 @@ dependencies (via cocoapods)
 
 ### network layer
 
-network is built to abstract from the implementation, I've used `URLSession` concept of tasks as a high level concept, and it plays well with the most of network implementations we have now for iOS, so, we can use either URLSession itself, or Alamofrie, or something else to cover our network needs
+network is built to abstract from the implementation, I've used `URLSession` concept of tasks as a high level concept, and it plays well with the most of network implementations we have now for iOS, so, we can use either URLSession itself, or Alamofrie, or something else to cover our network needs.
 
-Goal on networking layer is to introduce also concept of endopoints: therefore, we will be able to create and test requests without need of creating and testing network layer implementation, only "our" part
+Goal on networking layer is to introduce also a concept of endopoints: therefore, we will be able to create and test requests without need of creating and testing network layer implementation, only "our" part. Now you can see we're creating URLRequest for network in the `RestaurantsDataSource` class, which is not that bad, but might be overhead in case of complex requests, security considerations, etc.
 
 ### data sources
 
