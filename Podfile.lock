@@ -2,24 +2,30 @@ PODS:
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
+  - RxMKMapView (4.3.0):
+    - RxCocoa (~> 4.3)
+    - RxSwift (~> 4.3)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
 
 DEPENDENCIES:
   - RxCocoa (~> 4.0)
+  - RxMKMapView
   - RxSwift (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - RxAtomic
     - RxCocoa
+    - RxMKMapView
     - RxSwift
 
 SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxMKMapView: 71f1a69a5e3b889662a6ec430006324974418d0c
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: 085b03222e345de8cb73eab8d4d2d04e3e3ba633
+PODFILE CHECKSUM: 0f8ec1a27d5dbd3be443520899f05e28241df83b
 
 COCOAPODS: 1.5.3

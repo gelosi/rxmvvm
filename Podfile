@@ -6,6 +6,7 @@ target 'rxmvvm' do
 
   pod 'RxSwift', '~> 4.0'
   pod 'RxCocoa', '~> 4.0'
+  pod 'RxMKMapView'
 
   # Pods for rxmvvm
 
