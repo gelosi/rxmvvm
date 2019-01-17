@@ -8,10 +8,18 @@
 
 import UIKit
 import MapKit
+import RxCocoa
+import RxSwift
 
 class MapViewController: UIViewController {
     
     @IBOutlet var mapView:MKMapView?
+    
+    // here we can do some DI work to abstract
+    // view controller from concrete view model
+    var viewModel = RestaurantsViewModel()
+    let disposeBag = DisposeBag()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
