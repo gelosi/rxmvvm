@@ -12,6 +12,23 @@ import RxCocoa
 import RxSwift
 import RxMKMapView
 
+class RestaurantAnnotation: NSObject, MKAnnotation {
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2DMake(restaurant.coordinates.latitude, restaurant.coordinates.longitude)
+    }
+    
+    var title: String? {
+        return restaurant.name
+    }
+    
+    let restaurant: Restaurant
+    
+    init(restaurant:Restaurant) {
+        self.restaurant = restaurant
+    }
+}
+
 class MapViewController: UIViewController {
     
     @IBOutlet var mapView:MKMapView?
