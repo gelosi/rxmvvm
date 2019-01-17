@@ -31,7 +31,7 @@ class RestaurantAnnotation: NSObject, MKAnnotation {
 
 class MapViewController: UIViewController {
     
-    @IBOutlet var mapView:MKMapView?
+    @IBOutlet var mapView:MKMapView!
     
     // here we can do some DI work to abstract
     // view controller from concrete view model
@@ -44,24 +44,38 @@ class MapViewController: UIViewController {
         
         let berlin = CLLocationCoordinate2D(latitude: BerlinCoordinate.latitude, longitude: BerlinCoordinate.longitude)
 
-        mapView?.setCenter(berlin, animated:false)
-        mapView?.setRegion(MKCoordinateRegion(center: berlin, latitudinalMeters: 2000, longitudinalMeters: 2000), animated:true)
+        mapView.setCenter(berlin, animated:false)
+        mapView.setRegion(MKCoordinateRegion(center: berlin, latitudinalMeters: 2000, longitudinalMeters: 2000), animated:true)
         
-        // setup map view with Rx extension
-        
-        mapView?.rx
-            .setDelegate(self)
+        viewModel.data
+            .map { restaurants -> [MKAnnotation] in
+                print("transforming to mkannotation")
+                return restaurants.map { restaurant in
+                    RestaurantAnnotation(restaurant:restaurant)
+                }
+            }
+            .asDriver(onErrorJustReturn: [])
+            .drive(mapView.rx.annotations)
+            .disposed(by: disposeBag)
+       
+        mapView.rx
+            .region
+            .map { region -> Restaurant.Coordinate in
+                return Restaurant.Coordinate(lat: region.center.latitude, lon: region.center.longitude)
+            }.asObservable()
+            .bind(to:viewModel.currentLocation)
             .disposed(by: disposeBag)
         
-        mapView?.rx
-            .regionDidChangeAnimated
-            .subscribe(onNext: { _ in
-                print("Map region changed")
-            })
+        mapView.rx
+            .setDelegate(self)
             .disposed(by: disposeBag)
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
-    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
+        view.canShowCallout = true
+        return view
+    }
 }
