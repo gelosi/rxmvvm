@@ -11,6 +11,7 @@
 		7CF56F7621F0761500A4EF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF56F7521F0761500A4EF80 /* Assets.xcassets */; };
 		7CF56F7921F0761500A4EF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF56F7721F0761500A4EF80 /* LaunchScreen.storyboard */; };
 		7CF56F8421F0761500A4EF80 /* rxmvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F8321F0761500A4EF80 /* rxmvvmTests.swift */; };
+		7CF56F8F21F079F000A4EF80 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F8E21F079F000A4EF80 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		7CF56F7F21F0761500A4EF80 /* rxmvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rxmvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF56F8321F0761500A4EF80 /* rxmvvmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rxmvvmTests.swift; sourceTree = "<group>"; };
 		7CF56F8521F0761500A4EF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CF56F8E21F079F000A4EF80 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				7CF56F7521F0761500A4EF80 /* Assets.xcassets */,
 				7CF56F7721F0761500A4EF80 /* LaunchScreen.storyboard */,
 				7CF56F7A21F0761500A4EF80 /* Info.plist */,
+				7CF56F8E21F079F000A4EF80 /* Network.swift */,
 			);
 			path = rxmvvm;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF56F6F21F0761300A4EF80 /* AppDelegate.swift in Sources */,
+				7CF56F8F21F079F000A4EF80 /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
