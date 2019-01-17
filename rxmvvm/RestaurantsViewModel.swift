@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-let BerlinCoordinate = Restaurant.Coordinate(lat:52,lon:13)
+let BerlinCoordinate = Restaurant.Coordinate(lat:52.507673, lon:13.390335)
 
 class RestaurantsViewModel {
     
