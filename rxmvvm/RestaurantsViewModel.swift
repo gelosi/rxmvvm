@@ -11,6 +11,8 @@ import RxCocoa
 
 let BerlinCoordinate = Restaurant.Coordinate(lat:52.507673, lon:13.390335)
 
+let YelpKey = "<set your proper api key here>"
+
 class RestaurantsViewModel {
     
     let currentLocation = Variable(BerlinCoordinate)
@@ -54,6 +56,17 @@ class RestaurantsViewModel {
             return nil
         }
         
-        return URLRequest(url:url)
+        var request = URLRequest(url:url)
+        
+        // as well, we can do better by setting default headers inside
+        // url session configuration!
+        
+        guard YelpKey.first != "<" else {
+            fatalError("Set proper Yelp Api Key!")
+        }
+    
+        request.addValue("Bearer \(YelpKey)", forHTTPHeaderField: "Authorization")
+        
+        return request
     }
 }
