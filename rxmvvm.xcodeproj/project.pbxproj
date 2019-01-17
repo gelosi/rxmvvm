@@ -17,6 +17,8 @@
 		7CF56F9321F0863B00A4EF80 /* UrlSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F9221F0863B00A4EF80 /* UrlSessionNetwork.swift */; };
 		7CF56F9521F08D9500A4EF80 /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F9421F08D9500A4EF80 /* RestaurantsViewModel.swift */; };
 		7CF56F9721F0931300A4EF80 /* RestaurantsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F9621F0931300A4EF80 /* RestaurantsDataSource.swift */; };
+		7CF56F9921F0A0EC00A4EF80 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF56F9821F0A0EC00A4EF80 /* Map.storyboard */; };
+		7CF56F9B21F0A18600A4EF80 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F9A21F0A18600A4EF80 /* MapViewController.swift */; };
 		B6A3824FDFD6493E4FCF25EA /* Pods_rxmvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BEFA440622860B40C1E95F /* Pods_rxmvvmTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		7CF56F9221F0863B00A4EF80 /* UrlSessionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionNetwork.swift; sourceTree = "<group>"; };
 		7CF56F9421F08D9500A4EF80 /* RestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModel.swift; sourceTree = "<group>"; };
 		7CF56F9621F0931300A4EF80 /* RestaurantsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDataSource.swift; sourceTree = "<group>"; };
+		7CF56F9821F0A0EC00A4EF80 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		7CF56F9A21F0A18600A4EF80 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F5C1E007643F6E48C127ED2D /* Pods-rxmvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxmvvm.release.xcconfig"; path = "Pods/Target Support Files/Pods-rxmvvm/Pods-rxmvvm.release.xcconfig"; sourceTree = "<group>"; };
 		F8BEFA440622860B40C1E95F /* Pods_rxmvvmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxmvvmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +108,8 @@
 				7CF56F7A21F0761500A4EF80 /* Info.plist */,
 				7CF56F9021F084DC00A4EF80 /* Restaurant.swift */,
 				7CF56F9621F0931300A4EF80 /* RestaurantsDataSource.swift */,
+				7CF56F9821F0A0EC00A4EF80 /* Map.storyboard */,
+				7CF56F9A21F0A18600A4EF80 /* MapViewController.swift */,
 			);
 			path = rxmvvm;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 			files = (
 				7CF56F7921F0761500A4EF80 /* LaunchScreen.storyboard in Resources */,
 				7CF56F7621F0761500A4EF80 /* Assets.xcassets in Resources */,
+				7CF56F9921F0A0EC00A4EF80 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +326,7 @@
 				7CF56F9521F08D9500A4EF80 /* RestaurantsViewModel.swift in Sources */,
 				7CF56F9121F084DC00A4EF80 /* Restaurant.swift in Sources */,
 				7CF56F9321F0863B00A4EF80 /* UrlSessionNetwork.swift in Sources */,
+				7CF56F9B21F0A18600A4EF80 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
