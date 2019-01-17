@@ -99,16 +99,15 @@
 		7CF56F6D21F0761300A4EF80 /* rxmvvm */ = {
 			isa = PBXGroup;
 			children = (
+				7CF56F7A21F0761500A4EF80 /* Info.plist */,
+				7CF56F7521F0761500A4EF80 /* Assets.xcassets */,
+				7CF56F6E21F0761300A4EF80 /* AppDelegate.swift */,
 				7CF56F8E21F079F000A4EF80 /* Network.swift */,
 				7CF56F9221F0863B00A4EF80 /* UrlSessionNetwork.swift */,
 				7CF56F9421F08D9500A4EF80 /* RestaurantsViewModel.swift */,
-				7CF56F6E21F0761300A4EF80 /* AppDelegate.swift */,
-				7CF56F7521F0761500A4EF80 /* Assets.xcassets */,
-				7CF56F7721F0761500A4EF80 /* LaunchScreen.storyboard */,
-				7CF56F7A21F0761500A4EF80 /* Info.plist */,
+				7CF56F9C21F0C68800A4EF80 /* Storyboards */,
 				7CF56F9021F084DC00A4EF80 /* Restaurant.swift */,
 				7CF56F9621F0931300A4EF80 /* RestaurantsDataSource.swift */,
-				7CF56F9821F0A0EC00A4EF80 /* Map.storyboard */,
 				7CF56F9A21F0A18600A4EF80 /* MapViewController.swift */,
 			);
 			path = rxmvvm;
@@ -121,6 +120,15 @@
 				7CF56F8521F0761500A4EF80 /* Info.plist */,
 			);
 			path = rxmvvmTests;
+			sourceTree = "<group>";
+		};
+		7CF56F9C21F0C68800A4EF80 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7CF56F7721F0761500A4EF80 /* LaunchScreen.storyboard */,
+				7CF56F9821F0A0EC00A4EF80 /* Map.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		B58D3EA2A7D658446D35E10E /* Pods */ = {
