@@ -1,0 +1,6 @@
+framework module Pods_rxmvvmTests {
+  umbrella header "Pods-rxmvvmTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
