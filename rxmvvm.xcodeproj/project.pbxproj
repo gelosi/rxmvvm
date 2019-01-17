@@ -15,6 +15,7 @@
 		7CF56F8F21F079F000A4EF80 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F8E21F079F000A4EF80 /* Network.swift */; };
 		7CF56F9121F084DC00A4EF80 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F9021F084DC00A4EF80 /* Restaurant.swift */; };
 		7CF56F9321F0863B00A4EF80 /* UrlSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F9221F0863B00A4EF80 /* UrlSessionNetwork.swift */; };
+		7CF56F9721F0931300A4EF80 /* RestaurantsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56F9621F0931300A4EF80 /* RestaurantsDataSource.swift */; };
 		B6A3824FDFD6493E4FCF25EA /* Pods_rxmvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BEFA440622860B40C1E95F /* Pods_rxmvvmTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		7CF56F8E21F079F000A4EF80 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7CF56F9021F084DC00A4EF80 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		7CF56F9221F0863B00A4EF80 /* UrlSessionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionNetwork.swift; sourceTree = "<group>"; };
+		7CF56F9621F0931300A4EF80 /* RestaurantsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDataSource.swift; sourceTree = "<group>"; };
 		F5C1E007643F6E48C127ED2D /* Pods-rxmvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxmvvm.release.xcconfig"; path = "Pods/Target Support Files/Pods-rxmvvm/Pods-rxmvvm.release.xcconfig"; sourceTree = "<group>"; };
 		F8BEFA440622860B40C1E95F /* Pods_rxmvvmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxmvvmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				7CF56F7721F0761500A4EF80 /* LaunchScreen.storyboard */,
 				7CF56F7A21F0761500A4EF80 /* Info.plist */,
 				7CF56F9021F084DC00A4EF80 /* Restaurant.swift */,
+				7CF56F9621F0931300A4EF80 /* RestaurantsDataSource.swift */,
 			);
 			path = rxmvvm;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF56F6F21F0761300A4EF80 /* AppDelegate.swift in Sources */,
+				7CF56F9721F0931300A4EF80 /* RestaurantsDataSource.swift in Sources */,
 				7CF56F8F21F079F000A4EF80 /* Network.swift in Sources */,
 				7CF56F9121F084DC00A4EF80 /* Restaurant.swift in Sources */,
 				7CF56F9321F0863B00A4EF80 /* UrlSessionNetwork.swift in Sources */,
