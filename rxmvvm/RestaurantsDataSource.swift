@@ -31,6 +31,8 @@ class RestaurantsDataSource {
                 observer.on(.completed)
             })
             
+            task.startTask()
+            
             return Disposables.create {
                 task.cancelTask()
             }
