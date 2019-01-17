@@ -38,6 +38,9 @@ class RestaurantsDataSource {
     }
     
     class func parseRestaurants(data:Data) -> [Restaurant] {
+        // force-unwrap set on purpose here
+        // as I'm missing time to test model is parsed out properly
+        // so, it's a crash point to the moment it's done right
         let restaurants = try! JSONDecoder().decode([Restaurant].self, from: data)
         return restaurants
     }
