@@ -1,0 +1,86 @@
+# At Digits, it's important we agree on a common Swift coding-style, and that
+# we have tooling in place to automatically enforce it, so we do not waste valuable
+# code-review time on trivial comments like "you're missing a space here".
+#
+# After evaluating options, we have settled on using SwiftLint (https://github.com/realm/SwiftLint)
+# for automated code linting.
+#
+# The following is our customized SwiftLint configuration, based loosely on the 
+# best practices laid out in Google's Swift style guide (https://google.github.io/swift/)
+# and informed by our practical experience with the language and what make for readable, 
+# but not overly pedantic, Swift code. 
+
+
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+
+# this lint config was copied from https://github.com/digits/swiftlint-yml/blob/master/swiftlint.yml
+
+opt_in_rules:
+  - sorted_imports
+  - closure_spacing
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - discouraged_optional_boolean
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  - fatal_error_message
+  - joined_default_parameter
+  - literal_expression_end_indentation
+  - number_separator
+  - operator_usage_whitespace
+  - redundant_nil_coalescing
+  - single_test_class
+  - sorted_first_last
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - yoda_condition
+  
+disabled_rules:
+  # Let's just all be reasonable, but not have a hard limit.
+  - line_length
+  # We want to permit ToDo's in the codebase.
+  - todo
+  # Nested types are brilliant for Codable support
+  - nesting
+  # Optional Collections are required for Codable
+  - discouraged_optional_collection
+  # No explicit raw values makes Codable support cleaner
+  - explicit_enum_raw_value
+  # No, they should be where they make grammatical sense.
+  - function_default_parameter_at_end
+  # Not when they are class-level and tightly grouped with the method that implements them.
+  - let_var_whitespace
+  # No, it's fair to have 2 lines of arguments
+  - multiline_arguments
+  # No, this is less readable
+  - multiline_function_chains
+  # No, it's fair to have 2 lines of parameters
+  - multiline_parameters
+  # two line is not possible, so, let's switch it off 
+  - vertical_whitespace
+  # two line is not possible, so, let's switch it off 
+  - trailing_whitespace
+
+
+# Customized rule parameters
+trailing_comma:
+  mandatory_comma: true
+  
+identifier_name:
+  excluded:
+    - id
+    - fd
+    - on
+    - iv
+    
+large_tuple: 3
+
+function_parameter_count: 8
+
+function_body_length: 50
+
+type_body_length: 300
+
