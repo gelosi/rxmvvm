@@ -43,7 +43,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let berlin = CLLocationCoordinate2D(latitude: viewModel.currentLocation.value.latitude, longitude: viewModel.currentLocation.value.latitude)
+        let berlin = viewModel.currentLocation.value.coordinate2d()
         
         mapView.setCenter(berlin, animated: false)
         mapView.setRegion(MKCoordinateRegion(center: berlin, latitudinalMeters: 2_000, longitudinalMeters: 2_000), animated: true)
@@ -62,7 +62,7 @@ class MapViewController: UIViewController {
         mapView.rx
             .region
             .map { region -> Restaurant.Coordinate in
-                return Restaurant.Coordinate(lat: region.center.latitude, lon: region.center.longitude)
+                return Restaurant.Coordinate(coordinate2d: region.center)
             }
             .asObservable()
             .bind(to: viewModel.currentLocation)
