@@ -6,11 +6,12 @@
 //  Copyright © 2019 Oleg Shanyuk. All rights reserved.
 //
 
-import UIKit
 import MapKit
 import RxCocoa
-import RxSwift
 import RxMKMapView
+import RxSwift
+import UIKit
+
 
 class RestaurantAnnotation: NSObject, MKAnnotation {
     
@@ -24,47 +25,47 @@ class RestaurantAnnotation: NSObject, MKAnnotation {
     
     let restaurant: Restaurant
     
-    init(restaurant:Restaurant) {
+    init(restaurant: Restaurant) {
         self.restaurant = restaurant
     }
 }
 
 class MapViewController: UIViewController {
     
-    @IBOutlet var mapView:MKMapView!
+    @IBOutlet var mapView: MKMapView!
     
     // here we can do some DI work to abstract
     // view controller from concrete view model
     var viewModel = RestaurantsViewModel()
     let disposeBag = DisposeBag()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let berlin = CLLocationCoordinate2D(latitude: BerlinCoordinate.latitude, longitude: BerlinCoordinate.longitude)
-
-        mapView.setCenter(berlin, animated:false)
-        mapView.setRegion(MKCoordinateRegion(center: berlin, latitudinalMeters: 2000, longitudinalMeters: 2000), animated:true)
+        let berlin = CLLocationCoordinate2D(latitude: viewModel.currentLocation.value.latitude, longitude: viewModel.currentLocation.value.latitude)
+        
+        mapView.setCenter(berlin, animated: false)
+        mapView.setRegion(MKCoordinateRegion(center: berlin, latitudinalMeters: 2_000, longitudinalMeters: 2_000), animated: true)
         
         viewModel.data
             .map { restaurants -> [MKAnnotation] in
                 print("transforming to mkannotation")
                 return restaurants.map { restaurant in
-                    RestaurantAnnotation(restaurant:restaurant)
+                    RestaurantAnnotation(restaurant: restaurant)
                 }
             }
             .asDriver(onErrorJustReturn: [])
             .drive(mapView.rx.annotations)
             .disposed(by: disposeBag)
-       
+        
         mapView.rx
             .region
             .map { region -> Restaurant.Coordinate in
                 return Restaurant.Coordinate(lat: region.center.latitude, lon: region.center.longitude)
             }
             .asObservable()
-            .bind(to:viewModel.currentLocation)
+            .bind(to: viewModel.currentLocation)
             .disposed(by: disposeBag)
         
         mapView.rx

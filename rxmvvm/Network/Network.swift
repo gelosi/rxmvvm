@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 // Those protocols are the basic network abstraction
 // necessary for this app purpose
 // allows to use any newtork implementation which can be tested to
@@ -20,7 +19,5 @@ protocol NetworkTask {
 }
 
 protocol Network {
-    func dataRequest(request:URLRequest, completion: @escaping (_ data:Data?, _ error:Error?) -> Void) -> NetworkTask
+    func dataRequest(request: URLRequest, completion: @escaping(_ data: Data?, _ error: Error?) -> Void) -> NetworkTask
 }
-
-

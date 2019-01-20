@@ -6,16 +6,16 @@
 //  Copyright © 2019 Oleg Shanyuk. All rights reserved.
 //
 
-import UIKit
 import RxCocoa
+import UIKit
+
 
 class UrlSessionNetwork: NSObject, Network {
-    
-    class UrlSessionNetworkTask:NetworkTask {
+    class UrlSessionNetworkTask: NetworkTask {
         
-        let task:URLSessionTask
+        let task: URLSessionTask
         
-        init(task:URLSessionTask) {
+        init(task: URLSessionTask) {
             self.task = task
         }
         
@@ -28,9 +28,9 @@ class UrlSessionNetwork: NSObject, Network {
         }
     }
     
-    func dataRequest(request:URLRequest, completion: @escaping (Data?, Error?) -> Void) -> NetworkTask {
+    func dataRequest(request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> NetworkTask {
 
-        let task = self.urlSession.dataTask(with:request) { (data, response, error) in
+        let task = self.urlSession.dataTask(with: request) { data, _, error in
             guard error == nil else {
                 completion(nil, error)
                 return
@@ -42,9 +42,9 @@ class UrlSessionNetwork: NSObject, Network {
         return UrlSessionNetworkTask(task: task)
     }
     
-    let urlSession:URLSession
+    let urlSession: URLSession
     
-    init(urlSession:URLSession) {
+    init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
     

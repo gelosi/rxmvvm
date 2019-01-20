@@ -11,15 +11,15 @@ import UIKit
 class Restaurant: Codable {
     
     class Coordinate: Codable {
-        let latitude:Double
-        let longitude:Double
+        let latitude: Double
+        let longitude: Double
         
-        init(lat:Double, lon:Double) {
+        init(lat: Double, lon: Double) {
             self.latitude = lat
             self.longitude = lon
         }
     }
     
-    let name:String
-    let coordinates:Coordinate
+    let name: String
+    let coordinates: Coordinate
 }
